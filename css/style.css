@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+}
+  
+/* FONTS */
+@font-face {
+  font-family: "clarendon-bold";
+  src: url("../fonts/Clarendon-Bold.ttf");
+}
+
+@font-face {
+  font-family: "lato";
+  src: url("../fonts/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url("../fonts/Nunito-VariableFont_wght.ttf");
+}
+
+/* HEADER */
+header {
+  width: 100%;
+}
+
+header .nav-header {
+  background-color: #00091b;
+  margin: 0%;
+  padding: 0%;
+}
+
+header .nav-header div a .logo-inicio {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+header .img-header {
+  width: 100%;
+  height: auto;
+  border-top: 4px solid #acacac;
+  border-bottom: 4px solid #acacac;
+  flex-wrap: nowrap;
+}
+/* FIN HEADER */
+
+footer .image-footer a .image-footer-redes, body p, body .h1-index, header .img-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BODY */
+body {
+  background-color: #00050e;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+body .h1-index {
+  font-family: "clarendon-bold";
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  margin: 20px 0;
+  padding: 20px;
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+  body .h1-index {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1100px) {
+  body .h1-index {
+    font-size: 40px;
+  }
+}
+/* FIN BODY */
+
+
+/* MAIN */
+h3 {
+  text-align: center;
+}
+
+.tienda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+}
+
+.productos-card {
+  background-color: #00091b;
+  border: 1px solid #acacac;
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  justify-content: center; 
+}
+
+.products-img {
+  padding: 5px;
+}
+
+.modal-container {
+  width: 100%;
+  height: 75vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s all ease-in-out
+}
+
+.my-modal {
+  background-color: #00091b;
+  width: 320px;
+  min-height: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  color: black;
+}
+
+.modal-container-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/* FIN MAIN */
+
+
+/* FOOTER */
+footer {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, 50%);
+}
+
+footer .image-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .image-footer a {
+  text-decoration: none;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+@media screen and (min-width: 992px) {
+  footer .image-footer a .image-footer-redes {
+    transition: all 1.25s;
+  }
+  footer .image-footer a .image-footer-redes:hover {
+    transform: scale(1.25);
+  }
+}
+
+@media screen and (max-width: 980px) {
+  footer .image-footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+footer p {
+  font-family: "nunito";
+  color: #acacac;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+  footer p {
+    width: 90%;
+    height: auto;
+    text-align: center;
+  }
+}
+    
+/* FIN FOOTER */
