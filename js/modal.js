@@ -1,4 +1,4 @@
-const modalContainer = document.querySelector('#modal-container')
+const modalContainer = document.querySelector('#modal-body')
 const openModal = document.querySelector('#open-modal')
 const closeModal = document.querySelector('#close-modal')
 

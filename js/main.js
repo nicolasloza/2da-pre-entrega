@@ -1,6 +1,7 @@
 let carrito
 const carritoLS = JSON.parse(localStorage.getItem('carrito'))
 let carritoHTML = document.getElementById('carrito')
+
 let total = 0;
 
 function renderizarProctuctos () {
@@ -47,34 +48,28 @@ function agregarAlCarrito(id) {
     renderizarCarrito();
 }
 
-
-
 function renderizarCarrito() {
     let carritoHTML = document.getElementById('carrito')
 
-    html = '';
+    html = ''; 
 
     carrito.forEach((producto, id) => {
         html += `
-        <div class="col-12 d-flex justify-content-center productos">
-            <div class="card text-dark productos-card" style="width: 18rem;">
-                <img class="card-img-top productos-img" src="${producto.img}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">${producto.nombre}</h5>
-                    <p>$${producto.precio}</p>
-                    <p>Cantidad: ${producto.cantidad}</p>
-                    <button class="btn btn-primary" onClick="eliminarDelCarrito(${id})">Eliminar</button>
-                    <button class="btn btn-success" onClick="aumentarLaCantidad(${id})">+</button>
-                    <button class="btn btn-danger" onClick="bajarLaCantidad(${id})"> - </button>
-                </div>
+            <div class="col-md-12 productoEnCarrito">  
+                <img src="${producto.img}"</img>
+                <h6>${producto.nombre}</h6>
+                <p>$${producto.precio}</p>
+                <p>Cantidad: ${producto.cantidad}</p>
+                <button class="btn btn-eliminar" onClick="eliminarDelCarrito(${id})">Eliminar</button>
+                <button class="btn btn-mas" onClick="aumentarLaCantidad(${id})">+</button>
+                <button class="btn btn-menos" onClick="bajarLaCantidad(${id})"> - </button>
             </div>
-        </div>
         `
     })
 
     carritoHTML.innerHTML = html
 
-    // calcularTotal();
+    renderizarCarrito()
 }
 
 function eliminarDelCarrito(id) {
@@ -91,7 +86,7 @@ function eliminarDelCarrito(id) {
 }
 
 function resetearCarrito() {
-
+    
 }
 
 function aumentarLaCantidad(id) {

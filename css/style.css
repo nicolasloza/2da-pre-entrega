@@ -119,10 +119,13 @@ h3 {
 .products-img {
   padding: 5px;
 }
+/* FIN MAIN */
 
-.modal-container {
+
+/* MODAL */
+.modal-body {
   width: 100%;
-  height: 75vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
@@ -137,8 +140,8 @@ h3 {
 
 .my-modal {
   background-color: #00091b;
-  width: 320px;
-  min-height: 300px;
+  width: 700px;
+  min-height: 200px;
   border-radius: 20px;
   padding: 20px;
   color: black;
@@ -149,9 +152,88 @@ h3 {
   visibility: visible;
 }
 
+.close-modal {
+  text-align: end;
+}
 
+.my-modal h4 {
+  text-align: center;
+}
 
-/* FIN MAIN */
+.productoEnCarrito {
+  border-left: 5px solid white;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  justify-content:space-around;
+}
+
+.productoEnCarrito:hover {
+  border-left: 5px solid #00050e;
+}
+
+.productoEnCarrito img {
+  width: 38px;
+  height: 38px;
+}
+
+.productoEnCarrito p {
+  width: 110px;
+  height: 38px;
+  margin: 0%;
+  padding: 6px;
+}
+
+.productoEnCarrito h6 {
+  width: 190px;
+  height: 38px;
+  margin: 0%;
+  padding: 6px;
+}
+
+.productoEnCarrito button {
+  font-size: 16px;
+}
+
+.btn-eliminar {
+  color: white;
+  background-color: rgb(167, 4, 4);
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 4px;
+}
+
+.btn-mas {
+  color: white;
+  background-color: rgb(2, 107, 2);
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 4px;
+}
+
+.btn-menos {
+  color: white;
+  background-color: rgb(167, 4, 4);
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 6px;
+}
+
+.finalizar-compra {
+  display: flex;
+  justify-content: center;
+}
+
+.finalizar-compra .btn {
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  padding: 7px 4px;
+  background-color: rgb(5, 5, 90);
+}
+/* FIN MODAL */
 
 
 /* FOOTER */
