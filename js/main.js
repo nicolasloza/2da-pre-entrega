@@ -2,7 +2,7 @@ let carrito
 const carritoLS = JSON.parse(localStorage.getItem('carrito'))
 let carritoHTML = document.getElementById('carrito')
 
-let total = 0;
+const precioTotal = document.querySelector('#precioTotal')
 
 function renderizarProctuctos () {
 
@@ -69,6 +69,8 @@ function renderizarCarrito() {
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
     carritoHTML.innerHTML = html
+
+    calcularTotal()
 }
 
 function eliminarDelCarrito(id) {
@@ -111,6 +113,18 @@ function bajarLaCantidad(id) {
     localStorage.setItem('carrito', JSON.stringify(carrito))
     renderizarCarrito()
 }
+
+function calcularTotal() {
+    let total = 0;
+
+    carrito.forEach((producto) => {
+        total += producto.precio * producto.cantidad
+    })
+
+    precioTotal.innerHTML = total
+    console.log(total)
+}
+
 
 if (carritoLS) {
     carrito = carritoLS
