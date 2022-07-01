@@ -67,9 +67,8 @@ function renderizarCarrito() {
         `
     })
 
+    localStorage.setItem('carrito', JSON.stringify(carrito))
     carritoHTML.innerHTML = html
-
-    renderizarCarrito()
 }
 
 function eliminarDelCarrito(id) {
