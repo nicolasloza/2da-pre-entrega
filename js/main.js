@@ -18,7 +18,7 @@ function renderizarProctuctos () {
                     <h5 class="card-title"> ${prod.nombre} </h5>
                     <p class="card-text"></p>
                     <p>$${prod.precio}</p>
-                    <button class="btn btn-primary" onClick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
+                    <button class="agregarCarrito" onClick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
                 </div>
             </div>
             </div>
@@ -60,9 +60,9 @@ function renderizarCarrito() {
                 <h6>${producto.nombre}</h6>
                 <p>$${producto.precio}</p>
                 <p>Cantidad: ${producto.cantidad}</p>
-                <button class="btn btn-eliminar" onClick="eliminarDelCarrito(${id})">Eliminar</button>
-                <button class="btn btn-mas" onClick="aumentarLaCantidad(${id})">+</button>
-                <button class="btn btn-menos" onClick="bajarLaCantidad(${id})"> - </button>
+                <button class="btn-eliminar" onClick="eliminarDelCarrito(${id})">Eliminar</button>
+                <button class="btn-mas" onClick="aumentarLaCantidad(${id})">+</button>
+                <button class="btn-menos" onClick="bajarLaCantidad(${id})"> - </button>
             </div>
         `
     })
@@ -122,7 +122,6 @@ function calcularTotal() {
     })
 
     precioTotal.innerHTML = total
-    console.log(total)
 }
 
 

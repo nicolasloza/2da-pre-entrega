@@ -119,6 +119,20 @@ h3 {
 .products-img {
   padding: 5px;
 }
+
+.agregarCarrito {
+  font-size: 16px;
+  color: white;
+  background-color: rgb(2, 107, 2);
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 4px 6px;
+}
+
+.agregarCarrito:active {
+  background-color: rgb(0, 56, 0);
+}
+
 /* FIN MAIN */
 
 
@@ -197,12 +211,20 @@ h3 {
   font-size: 16px;
 }
 
+.productoEnCarrito button:hover {
+  color: white;
+}
+
 .btn-eliminar {
   color: white;
   background-color: rgb(167, 4, 4);
   border: 3px solid black;
   border-radius: 15px;
   padding: 4px;
+}
+
+.btn-eliminar:active {
+  background-color: rgb(109, 2, 2);
 }
 
 .btn-mas {
@@ -213,12 +235,20 @@ h3 {
   padding: 4px;
 }
 
+.btn-mas:active {
+  background-color: rgb(0, 56, 0);
+}
+
 .btn-menos {
   color: white;
   background-color: rgb(167, 4, 4);
   border: 3px solid black;
   border-radius: 15px;
   padding: 6px;
+}
+
+.btn-menos:active {
+  background-color: rgb(109, 2, 2);
 }
 
 .finalizar-compra {
