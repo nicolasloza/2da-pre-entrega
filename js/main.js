@@ -43,6 +43,8 @@ function agregarAlCarrito(id) {
         carrito.push(producto);
     }
 
+    toastAgregado(producto)
+
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     renderizarCarrito();
@@ -68,6 +70,7 @@ function renderizarCarrito() {
     })
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
+
     carritoHTML.innerHTML = html
 
     calcularTotal()
@@ -99,6 +102,7 @@ function aumentarLaCantidad(id) {
     } 
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
+
     renderizarCarrito()
 
 }
@@ -111,6 +115,7 @@ function bajarLaCantidad(id) {
     }
     
     localStorage.setItem('carrito', JSON.stringify(carrito))
+
     renderizarCarrito()
 }
 
@@ -124,6 +129,17 @@ function calcularTotal() {
     precioTotal.innerHTML = total
 }
 
+function toastAgregado(producto) {
+    Toastify({
+        text: `CD "${producto.nombre}" en carrito!`,     
+        duration: 1500,
+        gravity: 'bottom',
+        style: {
+            background: '#00091b',
+            color: 'white',
+        }
+    }).showToast();
+}
 
 if (carritoLS) {
     carrito = carritoLS
