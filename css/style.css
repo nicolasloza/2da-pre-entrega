@@ -44,6 +44,11 @@ header .img-header {
   border-bottom: 4px solid #acacac;
   flex-wrap: nowrap;
 }
+
+.btn-carrito {
+  background-color:#00091b;
+  border: none;
+}
 /* FIN HEADER */
 
 footer .image-footer a .image-footer-redes, body p, body .h1-index, header .img-header {
@@ -253,15 +258,27 @@ h3 {
 
 .finalizar-compra {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
-.finalizar-compra .btn {
+.finalizar-compra .btn-finalizar {
   text-align: center;
   color: white;
   background-color: rgb(0, 0, 87);
   border-radius: 15px;
   padding: 7px 6px;
+}
+
+.finalizar-compra .btn-vaciar {
+  text-align: center;
+  color: white;
+  background-color: rgb(167, 4, 4);
+  border-radius: 15px;
+  padding: 7px 6px;
+}
+
+.btn-vaciar:active {
+  background-color: rgb(109, 2, 2);
 }
 /* FIN MODAL */
 

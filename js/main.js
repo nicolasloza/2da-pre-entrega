@@ -1,8 +1,11 @@
 let carrito
 const carritoLS = JSON.parse(localStorage.getItem('carrito'))
-let carritoHTML = document.getElementById('carrito')
+let carritoHTML = document.querySelector('#carrito')
 
 const precioTotal = document.querySelector('#precioTotal')
+
+const btnVaciar = document.querySelector('#btn-vaciar')
+btnVaciar.addEventListener('click', resetearCarrito)
 
 function renderizarProctuctos () {
 
@@ -43,11 +46,9 @@ function agregarAlCarrito(id) {
         carrito.push(producto);
     }
 
-    toastAgregado(producto)
-
     localStorage.setItem('carrito', JSON.stringify(carrito))
-
-    renderizarCarrito();
+    toastAgregado(producto)
+    renderizarCarrito()
 }
 
 function renderizarCarrito() {
@@ -78,19 +79,25 @@ function renderizarCarrito() {
 
 function eliminarDelCarrito(id) {
 
-    let eliminar = carrito.indexOf(id)
+    let eliminar = carrito[id]
 
     if (eliminar) {
         carrito.splice(id, 1)
-    }
+    }   
     
     localStorage.setItem('carrito', JSON.stringify(carrito))
     
     renderizarCarrito()
+    toastEliminado(eliminar)
+
 }
 
 function resetearCarrito() {
-    
+    carrito.length = 0
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    renderizarCarrito()
+    toastVaciarCarrito()
 }
 
 function aumentarLaCantidad(id) {
@@ -102,9 +109,8 @@ function aumentarLaCantidad(id) {
     } 
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
-
     renderizarCarrito()
-
+    toastAgregado(carrito[id])
 }
 
 function bajarLaCantidad(id) {
@@ -115,8 +121,8 @@ function bajarLaCantidad(id) {
     }
     
     localStorage.setItem('carrito', JSON.stringify(carrito))
-
     renderizarCarrito()
+    toastEliminado(carrito[id])
 }
 
 function calcularTotal() {
@@ -131,8 +137,34 @@ function calcularTotal() {
 
 function toastAgregado(producto) {
     Toastify({
+        avatar: `${producto.img}`,
         text: `CD "${producto.nombre}" en carrito!`,     
-        duration: 1500,
+        duration: 2000,
+        gravity: 'bottom',
+        style: {
+            background: '#00091b',
+            color: 'white',
+        }
+    }).showToast();
+}
+
+function toastEliminado(producto) {
+    Toastify({
+        avatar: `${producto.img}`,
+        text: `CD "${producto.nombre}" se elimino del carrito!`,     
+        duration: 2000,
+        gravity: 'bottom',
+        style: {
+            background: '#00091b',
+            color: 'white',
+        }
+    }).showToast();
+}
+
+function toastVaciarCarrito() {
+    Toastify({
+        text: 'Se vació el carrito correctamente',     
+        duration: 2000,
         gravity: 'bottom',
         style: {
             background: '#00091b',
