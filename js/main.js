@@ -3,6 +3,7 @@ const carritoLS = JSON.parse(localStorage.getItem('carrito'))
 let carritoHTML = document.querySelector('#carrito')
 
 const precioTotal = document.querySelector('#precioTotal')
+const precioFinal = document.querySelector('#precioFinal')
 
 const btnVaciar = document.querySelector('#btn-vaciar')
 btnVaciar.addEventListener('click', resetearCarrito)
@@ -19,8 +20,7 @@ function renderizarProctuctos () {
             <img class="card-img-top productos-img" src="${prod.img}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"> ${prod.nombre} </h5>
-                    <p class="card-text"></p>
-                    <p>$${prod.precio}</p>
+                    <p class="card-price">$${prod.precio}</p>
                     <button class="agregarCarrito" onClick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
                 </div>
             </div>

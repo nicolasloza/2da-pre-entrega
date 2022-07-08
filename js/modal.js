@@ -27,6 +27,7 @@ const btnComprar = document.querySelector('#btn-enviar')
 
 openModal.addEventListener('click', () => {
     modalContainer.classList.add('modal-container-visible')
+
 })
 
 closeModal.addEventListener('click', () => {
@@ -44,42 +45,42 @@ closeFinalizar.addEventListener('click', () => {
 })
 
 inputDNI.addEventListener('input', () => {
-    if(inputDNI.value.length === 8) {
-        inputDNI.classList.add('border-success')
-        inputDNI.classList.remove('border-danger')
-    } else {
+    if(inputDNI.value.length <= 6) {
         inputDNI.classList.add ('border-danger')
         inputDNI.classList.remove ('border-success')
+    } else {
+        inputDNI.classList.add('border-success')
+        inputDNI.classList.remove('border-danger')
     }
 })
 
 inputCelular.addEventListener('input', () => {
-    if(inputCelular.value.length === 10) {
-        inputCelular.classList.add('border-success')
-        inputCelular.classList.remove('border-danger')
-    } else {
+    if(inputCelular.value.length <= 9) {
         inputCelular.classList.add ('border-danger')
         inputCelular.classList.remove ('border-success')
+    } else {
+        inputCelular.classList.add('border-success')
+        inputCelular.classList.remove('border-danger')
     }
 })
 
 inputCP.addEventListener('input', () => {
-    if(inputCP.value.length === 4) {
-        inputCP.classList.add('border-success')
-        inputCP.classList.remove('border-danger')
-    } else {
+    if(inputCP.value.length <= 3) {
         inputCP.classList.add ('border-danger')
         inputCP.classList.remove ('border-success')
+    } else {
+        inputCP.classList.add('border-success')
+        inputCP.classList.remove('border-danger')
     }
 })
 
 inputTarjeta.addEventListener('input', () => {
-    if(inputTarjeta.value.length === 16) {
-        inputTarjeta.classList.add('border-success')
-        inputTarjeta.classList.remove('border-danger')
-    } else {
+    if(inputTarjeta.value.length <= 15) {
         inputTarjeta.classList.add ('border-danger')
         inputTarjeta.classList.remove ('border-success')
+    } else {
+        inputTarjeta.classList.add('border-success')
+        inputTarjeta.classList.remove('border-danger')
     }
 })
 
@@ -94,12 +95,13 @@ inputVencimiento.addEventListener('input', () => {
 })
 
 inputSeguridad.addEventListener('input', () => {
-    if(inputSeguridad.value.length === 3) {
-        inputSeguridad.classList.add('border-success')
-        inputSeguridad.classList.remove('border-danger')
-    } else {
+    
+    if(inputSeguridad.value.length <= 2) {
         inputSeguridad.classList.add ('border-danger')
         inputSeguridad.classList.remove ('border-success')
+    } else {
+        inputSeguridad.classList.add('border-success')
+        inputSeguridad.classList.remove('border-danger')
     }
 })
 
@@ -110,7 +112,7 @@ btnComprar.addEventListener('click', () => {
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault()
-
+    
     const userData = {
         nombre: inputNombre.value,
         dni: inputDNI.value,
@@ -122,7 +124,7 @@ formulario.addEventListener('submit', (e) => {
         provincia: inputProvincia.value,
         localidad: inputLocalidad.value,
     }
-
+    
     Swal.fire({
         icon: 'success',
         background: '#00091b',
