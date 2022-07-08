@@ -89,7 +89,6 @@ function eliminarDelCarrito(id) {
     
     renderizarCarrito()
     toastEliminado(eliminar)
-
 }
 
 function resetearCarrito() {

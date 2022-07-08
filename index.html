@@ -82,8 +82,52 @@
 
                 <div class="finalizar-compra">
                     <button id="btn-vaciar" class="btn-vaciar">Vaciar carrito</button>
-                    <button class="btn-finalizar">Finalizar compra</button>
+                    <button class="btn-finalizar open-finalizar" id="open-finalizar">Finalizar compra</button>
                 </div>
+            </div>
+        </div>
+        <div class="modal-body" id="modal-finalizar">
+            <div id="modal" class="my-modal">
+                <div class="close-finalizar" id="close-finalizar">
+                    <button type="button" class="btn-close btn-close-white" id="close-modal" aria-label="Close"></button>
+                </div>
+                <h4>Finalizar compra</h4>  
+                <br>              
+                <div id="finalizar">
+                    <form id="my-form">
+                        <h5>Ingrese los datos solicitados:</h5>
+                        <br>
+                        <input type="text" id="input-nombre" placeholder="Nombre y apellido" class="input-form">
+                        <input type="text" id="input-dni" placeholder="DNI o CUIL" class="input-form">
+                        <input type="text" id="input-email" placeholder="Email" class="input-form">
+                        <input type="text" id="input-celular" placeholder="Celular" class="input-form">
+                        <h6>Datos de envio y facturación:</h6>
+                        <input type="text" id="input-direccion" placeholder="Dirección" class="input-form">
+                        <input type="text" id="input-numero" placeholder="Número" class="input-form">
+                        <input type="text" id="input-otros" placeholder="Torre / Piso / Depto" class="input-form">
+                        <input type="text" id="input-cp" placeholder="C.P." class="input-form">
+                        <input type="text" id="input-provincia" placeholder="Provincia" class="input-form">
+                        <input type="text" id="input-localidad" placeholder="Localidad" class="input-form">
+                        <br>
+                        <h6>Ingrese la forma de pago</h6>
+                        <input type="text" id="input-tarjeta" placeholder="Número de tarjeta" class="input-form">
+                        <input type="text" id="input-vencimiento" placeholder="MM/AA" class="input-form">
+                        <input type="text" id="input-titular" placeholder="Nombre del titular (como aparece en la tarjeta)" class="input-form">
+                        <input type="password" id="input-seguridad" placeholder="Cod. seg." class="input-form">
+                        <div id="total">
+                            <p class="precioProducto">TOTAL: $<span id="precioTotal"></span></p>
+                        </div>
+                        <div class="div-enviar">
+                            <button id="btn-enviar" class="btn-enviar" type="submit">COMPRAR</button>
+                        </div>
+                        
+                    </form>
+                    
+                    
+                    
+                </div>    
+                
+                
             </div>
         </div>
     </main>
@@ -117,6 +161,9 @@
 
     <!-- Toastify -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
