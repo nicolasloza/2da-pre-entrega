@@ -5,6 +5,20 @@ let carritoHTML = document.querySelector('#carrito')
 const precioTotal = document.querySelector('#precioTotal')
 const precioFinal = document.querySelector('#precioFinal')
 
+const openModal = document.querySelector('#open-modal');
+const openFinalizar = document.querySelector('#open-finalizar');
+
+openModal.addEventListener('click', () => {
+    renderizarCarrito();
+    modalContainer.classList.add('modal-container-visible')
+})
+
+openFinalizar.addEventListener('click', () => {
+    renderizarCarrito(true);
+    modalFinalizar.classList.add('finalizar-container-visible')
+    modalContainer.classList.remove('modal-container-visible')
+})
+
 const btnVaciar = document.querySelector('#btn-vaciar')
 btnVaciar.addEventListener('click', resetearCarrito)
 
@@ -51,7 +65,7 @@ function agregarAlCarrito(id) {
     renderizarCarrito()
 }
 
-function renderizarCarrito() {
+function renderizarCarrito(isFinal = false) {
     let carritoHTML = document.getElementById('carrito')
 
     html = ''; 
@@ -74,7 +88,7 @@ function renderizarCarrito() {
 
     carritoHTML.innerHTML = html
 
-    calcularTotal()
+    calcularTotal(isFinal);
 }
 
 function eliminarDelCarrito(id) {
@@ -124,14 +138,18 @@ function bajarLaCantidad(id) {
     toastEliminado(carrito[id])
 }
 
-function calcularTotal() {
+function calcularTotal(isFinal = false) {
     let total = 0;
 
     carrito.forEach((producto) => {
         total += producto.precio * producto.cantidad
     })
 
-    precioTotal.innerHTML = total
+    if (isFinal) {
+        precioFinal.innerHTML = total
+    } else {
+        precioTotal.innerHTML = total
+    }
 }
 
 function toastAgregado(producto) {

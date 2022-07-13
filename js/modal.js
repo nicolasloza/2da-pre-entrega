@@ -1,9 +1,9 @@
 const modalContainer = document.querySelector('#modal-body')
-const openModal = document.querySelector('#open-modal')
+// const openModal = document.querySelector('#open-modal')
 const closeModal = document.querySelector('#close-modal')
 
 const modalFinalizar = document.querySelector('#modal-finalizar')
-const openFinalizar = document.querySelector('#open-finalizar')
+// const openFinalizar = document.querySelector('#open-finalizar')
 const closeFinalizar = document.querySelector('#close-finalizar')
 
 const formulario = document.querySelector('#my-form')
@@ -25,21 +25,24 @@ const inputSeguridad = document.querySelector('#input-seguridad')
 const btnComprar = document.querySelector('#btn-enviar')
 
 
-openModal.addEventListener('click', () => {
-    modalContainer.classList.add('modal-container-visible')
-
-})
+// openModal.addEventListener('click', () => {
+//     localStorage.setItem('isFinal', false);
+//     modalContainer.classList.add('modal-container-visible')
+// })
 
 closeModal.addEventListener('click', () => {
+    isFinal = false
     modalContainer.classList.remove('modal-container-visible')
 })
 
-openFinalizar.addEventListener('click', () => {
-    modalFinalizar.classList.add('finalizar-container-visible')
-    modalContainer.classList.remove('modal-container-visible')
-})
+// openFinalizar.addEventListener('click', () => {
+//     localStorage.setItem('isFinal', true);
+//     modalFinalizar.classList.add('finalizar-container-visible')
+//     modalContainer.classList.remove('modal-container-visible')
+// })
 
 closeFinalizar.addEventListener('click', () => {
+    isFinal = false
     modalFinalizar.classList.remove('finalizar-container-visible')
     modalContainer.classList.add('modal-container-visible')
 })
