@@ -23,7 +23,7 @@ const btnVaciar = document.querySelector('#btn-vaciar')
 btnVaciar.addEventListener('click', resetearCarrito)
 
 const fetchProducts = () => {
-    return fetch('https://my-json-server.typicode.com/nicolasloza/EntregaFinal-LozaSpataro')
+    return fetch('https://mocki.io/v1/a0f15ea0-9816-4773-b157-6cc7c519c08a')
         .then((res) => {
             const response = res.json();
             console.log('RESPONSE', response);
