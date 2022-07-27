@@ -22,7 +22,21 @@ openFinalizar.addEventListener('click', () => {
 const btnVaciar = document.querySelector('#btn-vaciar')
 btnVaciar.addEventListener('click', resetearCarrito)
 
-function renderizarProctuctos () {
+const fetchProducts = () => {
+    return fetch('https://my-json-server.typicode.com/nicolasloza/EntregaFinal-LozaSpataro')
+        .then((res) => {
+            const response = res.json();
+            console.log('RESPONSE', response);
+            return response;
+        })
+        // .then((results) => {
+        //     renderizarProctuctos(results);
+        // })
+        .catch(err => console.log('NO SE PUDO CARGAR'));
+        // .the
+}
+
+function renderizarProctuctos (productos) {
 
     let tienda = document.getElementById('tienda')
 
@@ -45,7 +59,9 @@ function renderizarProctuctos () {
     });
 }
 
-renderizarProctuctos();
+fetchProducts();
+
+// renderizarProctuctos();
 
 function agregarAlCarrito(id) {
 
