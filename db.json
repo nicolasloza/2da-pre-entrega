@@ -26,12 +26,5 @@
         "img": "./images/products/elbarrio.jpg",
         "precio": 1400,
         "cantidad": 1
-    },
-    {
-        "id": 5,
-        "nombre": "10 años",
-        "img": "./images/products/10.jpg",
-        "precio": 1250,
-        "cantidad": 1
     }
 ]
