@@ -1,3 +1,5 @@
+let productos
+
 let carrito
 const carritoLS = JSON.parse(localStorage.getItem('carrito'))
 let carritoHTML = document.querySelector('#carrito')
@@ -22,21 +24,44 @@ openFinalizar.addEventListener('click', () => {
 const btnVaciar = document.querySelector('#btn-vaciar')
 btnVaciar.addEventListener('click', resetearCarrito)
 
-const fetchProducts = () => {
-    return fetch('https://mocki.io/v1/a0f15ea0-9816-4773-b157-6cc7c519c08a')
-        .then((res) => {
-            const response = res.json();
-            console.log('RESPONSE', response);
-            return response;
-        })
-        // .then((results) => {
-        //     renderizarProctuctos(results);
-        // })
-        .catch(err => console.log('NO SE PUDO CARGAR'));
-        // .the
+fetchProducts();
+
+// const productos = await fetchProducts();
+// renderizarProductos(productos);
+
+if (carritoLS) {
+    carrito = carritoLS
+} else {
+    carrito = []
 }
 
-function renderizarProctuctos (productos) {
+/* ---- METHODS ---- */
+
+function fetchProducts () {
+    return fetch('https://mocki.io/v1/8cdf0099-1b3f-40d1-a359-ef711c6e0061')
+        .then((res) => {
+            const response = res.json();
+            return response;
+        })
+        .then((results) => {
+            productos = results;
+            renderizarProductos(results);
+        })
+        .catch(err => console.log('No se pudo cargar la información sobre los productos'));
+}
+
+// async function fetchProducts () {
+//     try {
+//         const response = await fetch('https://mocki.io/v1/8cdf0099-1b3f-40d1-a359-ef711c6e0061');
+//         const images = await response.json();
+//         console.log('RESULTADO', images);
+//         return images;
+//     } catch (e) {
+//         console.log('err', e.message)
+//     }
+// }
+
+function renderizarProductos (productos) {
 
     let tienda = document.getElementById('tienda')
 
@@ -58,10 +83,6 @@ function renderizarProctuctos (productos) {
         tienda.innerHTML += productoHTML
     });
 }
-
-fetchProducts();
-
-// renderizarProctuctos();
 
 function agregarAlCarrito(id) {
 
@@ -204,11 +225,5 @@ function toastVaciarCarrito() {
             color: 'white',
         }
     }).showToast();
-}
-
-if (carritoLS) {
-    carrito = carritoLS
-} else {
-    carrito = []
 }
 
