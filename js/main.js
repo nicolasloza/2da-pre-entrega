@@ -172,7 +172,6 @@ function bajarLaCantidad(id) {
     
     localStorage.setItem('carrito', JSON.stringify(carrito))
     renderizarCarrito()
-    toastEliminado(carrito[id])
 }
 
 function calcularTotal(isFinal = false) {
