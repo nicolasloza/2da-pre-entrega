@@ -24,9 +24,9 @@ openFinalizar.addEventListener('click', () => {
 const btnVaciar = document.querySelector('#btn-vaciar')
 btnVaciar.addEventListener('click', resetearCarrito)
 
-fetchProducts();
+fetchProductos();
 
-// const productos = await fetchProducts();
+// const productos = await fetchProductos();
 // renderizarProductos(productos);
 
 if (carritoLS) {
@@ -37,15 +37,15 @@ if (carritoLS) {
 
 /* ---- METHODS ---- */
 
-function fetchProducts () {
-    return fetch('https://mocki.io/v1/8cdf0099-1b3f-40d1-a359-ef711c6e0061')
+function fetchProductos () {
+    return fetch('https://mocki.io/v1/711f99d3-ed17-4a04-a0b9-f1af5785abb6')
         .then((res) => {
             const response = res.json();
             return response;
         })
-        .then((results) => {
-            productos = results;
-            renderizarProductos(results);
+        .then((resultados) => {
+            productos = resultados;
+            renderizarProductos(resultados);
         })
         .catch(err => console.log('No se pudo cargar la información sobre los productos'));
 }
